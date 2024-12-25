@@ -17,7 +17,7 @@ class HistoryModelAdapter extends TypeAdapter<HistoryModel> {
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return HistoryModel(
-      id: fields[0] as int,
+      id: fields[0] as String,
       note: fields[1] as String,
       status: fields[4] as bool,
       createdAt: fields[2] as String,

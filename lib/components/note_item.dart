@@ -121,7 +121,7 @@ class NoteItem extends StatelessWidget {
                             context.read<NoteBloc>().add(NoteEvent.completeTask(
                                 noteId: id,
                                 model: HistoryModel(
-                                  id: id,
+                                  id: "",
                                   note: note,
                                   status: true,
                                   createdAt: createdAt,
@@ -157,7 +157,7 @@ class NoteItem extends StatelessWidget {
                             context.read<NoteBloc>().add(NoteEvent.completeTask(
                                 noteId: id,
                                 model: HistoryModel(
-                                  id: id,
+                                  id: "",
                                   note: note,
                                   status: false,
                                   createdAt: createdAt,

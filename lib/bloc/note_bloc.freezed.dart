@@ -193,7 +193,7 @@ mixin _$NoteEvent {
     required TResult Function(NoteModel model) addNote,
     required TResult Function() getNotes,
     required TResult Function(int noteId, HistoryModel model) completeTask,
-    required TResult Function(int noteId) deleteNoteFromHistory,
+    required TResult Function(String noteId) deleteNoteFromHistory,
     required TResult Function() getHistory,
   }) =>
       throw _privateConstructorUsedError;
@@ -202,7 +202,7 @@ mixin _$NoteEvent {
     TResult? Function(NoteModel model)? addNote,
     TResult? Function()? getNotes,
     TResult? Function(int noteId, HistoryModel model)? completeTask,
-    TResult? Function(int noteId)? deleteNoteFromHistory,
+    TResult? Function(String noteId)? deleteNoteFromHistory,
     TResult? Function()? getHistory,
   }) =>
       throw _privateConstructorUsedError;
@@ -211,7 +211,7 @@ mixin _$NoteEvent {
     TResult Function(NoteModel model)? addNote,
     TResult Function()? getNotes,
     TResult Function(int noteId, HistoryModel model)? completeTask,
-    TResult Function(int noteId)? deleteNoteFromHistory,
+    TResult Function(String noteId)? deleteNoteFromHistory,
     TResult Function()? getHistory,
     required TResult orElse(),
   }) =>
@@ -338,7 +338,7 @@ class _$AddNoteImpl implements _AddNote {
     required TResult Function(NoteModel model) addNote,
     required TResult Function() getNotes,
     required TResult Function(int noteId, HistoryModel model) completeTask,
-    required TResult Function(int noteId) deleteNoteFromHistory,
+    required TResult Function(String noteId) deleteNoteFromHistory,
     required TResult Function() getHistory,
   }) {
     return addNote(model);
@@ -350,7 +350,7 @@ class _$AddNoteImpl implements _AddNote {
     TResult? Function(NoteModel model)? addNote,
     TResult? Function()? getNotes,
     TResult? Function(int noteId, HistoryModel model)? completeTask,
-    TResult? Function(int noteId)? deleteNoteFromHistory,
+    TResult? Function(String noteId)? deleteNoteFromHistory,
     TResult? Function()? getHistory,
   }) {
     return addNote?.call(model);
@@ -362,7 +362,7 @@ class _$AddNoteImpl implements _AddNote {
     TResult Function(NoteModel model)? addNote,
     TResult Function()? getNotes,
     TResult Function(int noteId, HistoryModel model)? completeTask,
-    TResult Function(int noteId)? deleteNoteFromHistory,
+    TResult Function(String noteId)? deleteNoteFromHistory,
     TResult Function()? getHistory,
     required TResult orElse(),
   }) {
@@ -470,7 +470,7 @@ class _$GetNotesImpl implements _GetNotes {
     required TResult Function(NoteModel model) addNote,
     required TResult Function() getNotes,
     required TResult Function(int noteId, HistoryModel model) completeTask,
-    required TResult Function(int noteId) deleteNoteFromHistory,
+    required TResult Function(String noteId) deleteNoteFromHistory,
     required TResult Function() getHistory,
   }) {
     return getNotes();
@@ -482,7 +482,7 @@ class _$GetNotesImpl implements _GetNotes {
     TResult? Function(NoteModel model)? addNote,
     TResult? Function()? getNotes,
     TResult? Function(int noteId, HistoryModel model)? completeTask,
-    TResult? Function(int noteId)? deleteNoteFromHistory,
+    TResult? Function(String noteId)? deleteNoteFromHistory,
     TResult? Function()? getHistory,
   }) {
     return getNotes?.call();
@@ -494,7 +494,7 @@ class _$GetNotesImpl implements _GetNotes {
     TResult Function(NoteModel model)? addNote,
     TResult Function()? getNotes,
     TResult Function(int noteId, HistoryModel model)? completeTask,
-    TResult Function(int noteId)? deleteNoteFromHistory,
+    TResult Function(String noteId)? deleteNoteFromHistory,
     TResult Function()? getHistory,
     required TResult orElse(),
   }) {
@@ -629,7 +629,7 @@ class _$CompleteTaskImpl implements _CompleteTask {
     required TResult Function(NoteModel model) addNote,
     required TResult Function() getNotes,
     required TResult Function(int noteId, HistoryModel model) completeTask,
-    required TResult Function(int noteId) deleteNoteFromHistory,
+    required TResult Function(String noteId) deleteNoteFromHistory,
     required TResult Function() getHistory,
   }) {
     return completeTask(noteId, model);
@@ -641,7 +641,7 @@ class _$CompleteTaskImpl implements _CompleteTask {
     TResult? Function(NoteModel model)? addNote,
     TResult? Function()? getNotes,
     TResult? Function(int noteId, HistoryModel model)? completeTask,
-    TResult? Function(int noteId)? deleteNoteFromHistory,
+    TResult? Function(String noteId)? deleteNoteFromHistory,
     TResult? Function()? getHistory,
   }) {
     return completeTask?.call(noteId, model);
@@ -653,7 +653,7 @@ class _$CompleteTaskImpl implements _CompleteTask {
     TResult Function(NoteModel model)? addNote,
     TResult Function()? getNotes,
     TResult Function(int noteId, HistoryModel model)? completeTask,
-    TResult Function(int noteId)? deleteNoteFromHistory,
+    TResult Function(String noteId)? deleteNoteFromHistory,
     TResult Function()? getHistory,
     required TResult orElse(),
   }) {
@@ -727,7 +727,7 @@ abstract class _$$DeleteNoteFromHistoryImplCopyWith<$Res> {
           $Res Function(_$DeleteNoteFromHistoryImpl) then) =
       __$$DeleteNoteFromHistoryImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({int noteId});
+  $Res call({String noteId});
 }
 
 /// @nodoc
@@ -749,7 +749,7 @@ class __$$DeleteNoteFromHistoryImplCopyWithImpl<$Res>
       noteId: null == noteId
           ? _value.noteId
           : noteId // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
     ));
   }
 }
@@ -760,7 +760,7 @@ class _$DeleteNoteFromHistoryImpl implements _DeleteNoteFromHistory {
   const _$DeleteNoteFromHistoryImpl({required this.noteId});
 
   @override
-  final int noteId;
+  final String noteId;
 
   @override
   String toString() {
@@ -793,7 +793,7 @@ class _$DeleteNoteFromHistoryImpl implements _DeleteNoteFromHistory {
     required TResult Function(NoteModel model) addNote,
     required TResult Function() getNotes,
     required TResult Function(int noteId, HistoryModel model) completeTask,
-    required TResult Function(int noteId) deleteNoteFromHistory,
+    required TResult Function(String noteId) deleteNoteFromHistory,
     required TResult Function() getHistory,
   }) {
     return deleteNoteFromHistory(noteId);
@@ -805,7 +805,7 @@ class _$DeleteNoteFromHistoryImpl implements _DeleteNoteFromHistory {
     TResult? Function(NoteModel model)? addNote,
     TResult? Function()? getNotes,
     TResult? Function(int noteId, HistoryModel model)? completeTask,
-    TResult? Function(int noteId)? deleteNoteFromHistory,
+    TResult? Function(String noteId)? deleteNoteFromHistory,
     TResult? Function()? getHistory,
   }) {
     return deleteNoteFromHistory?.call(noteId);
@@ -817,7 +817,7 @@ class _$DeleteNoteFromHistoryImpl implements _DeleteNoteFromHistory {
     TResult Function(NoteModel model)? addNote,
     TResult Function()? getNotes,
     TResult Function(int noteId, HistoryModel model)? completeTask,
-    TResult Function(int noteId)? deleteNoteFromHistory,
+    TResult Function(String noteId)? deleteNoteFromHistory,
     TResult Function()? getHistory,
     required TResult orElse(),
   }) {
@@ -870,10 +870,10 @@ class _$DeleteNoteFromHistoryImpl implements _DeleteNoteFromHistory {
 }
 
 abstract class _DeleteNoteFromHistory implements NoteEvent {
-  const factory _DeleteNoteFromHistory({required final int noteId}) =
+  const factory _DeleteNoteFromHistory({required final String noteId}) =
       _$DeleteNoteFromHistoryImpl;
 
-  int get noteId;
+  String get noteId;
 
   /// Create a copy of NoteEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -926,7 +926,7 @@ class _$GetHistoryImpl implements _GetHistory {
     required TResult Function(NoteModel model) addNote,
     required TResult Function() getNotes,
     required TResult Function(int noteId, HistoryModel model) completeTask,
-    required TResult Function(int noteId) deleteNoteFromHistory,
+    required TResult Function(String noteId) deleteNoteFromHistory,
     required TResult Function() getHistory,
   }) {
     return getHistory();
@@ -938,7 +938,7 @@ class _$GetHistoryImpl implements _GetHistory {
     TResult? Function(NoteModel model)? addNote,
     TResult? Function()? getNotes,
     TResult? Function(int noteId, HistoryModel model)? completeTask,
-    TResult? Function(int noteId)? deleteNoteFromHistory,
+    TResult? Function(String noteId)? deleteNoteFromHistory,
     TResult? Function()? getHistory,
   }) {
     return getHistory?.call();
@@ -950,7 +950,7 @@ class _$GetHistoryImpl implements _GetHistory {
     TResult Function(NoteModel model)? addNote,
     TResult Function()? getNotes,
     TResult Function(int noteId, HistoryModel model)? completeTask,
-    TResult Function(int noteId)? deleteNoteFromHistory,
+    TResult Function(String noteId)? deleteNoteFromHistory,
     TResult Function()? getHistory,
     required TResult orElse(),
   }) {

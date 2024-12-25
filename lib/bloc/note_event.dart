@@ -12,7 +12,7 @@ class NoteEvent with _$NoteEvent {
   }) = _CompleteTask;
 
   const factory NoteEvent.deleteNoteFromHistory({
-    required int noteId,
+    required String noteId,
   }) = _DeleteNoteFromHistory;
   const factory NoteEvent.getHistory() = _GetHistory;
 }

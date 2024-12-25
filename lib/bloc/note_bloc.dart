@@ -4,6 +4,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:note_app/db/db_note.dart';
 import 'package:note_app/model/history_model.dart';
 import 'package:note_app/model/note_model.dart';
+import 'package:uuid/uuid.dart';
 
 part 'note_state.dart';
 part 'note_event.dart';
@@ -38,12 +39,21 @@ class NoteBloc extends Bloc<NoteEvent, NoteState> {
 
   Future<void> _completeTask(
       _CompleteTask event, Emitter<NoteState> emit) async {
+    var uuid = Uuid();
+    String uniqueId = uuid.v4();
     List<HistoryModel> history = List.from(state.histories ?? []);
     List<NoteModel> notes = List.from(state.notes ?? []);
-    history.add(event.model);
+    var model = HistoryModel(
+      id: uniqueId,
+      note: event.model.note,
+      status: event.model.status,
+      createdAt: event.model.createdAt,
+      completedAt: event.model.completedAt,
+    );
+    history.add(model);
     DbNote().deleteNoteById(event.noteId);
     notes.removeWhere((b) => b.id == event.noteId);
-    await DbHistory().complete(event.model);
+    await DbHistory().complete(model);
     emit(
       state.copyWith(
         histories: history,

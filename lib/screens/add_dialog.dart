@@ -46,6 +46,7 @@ class _AddDialogState extends State<AddDialog> {
           height: 20,
         ),
         TextFormField(
+          autofocus: true,
           controller: noteController,
           decoration: InputDecoration(
             focusedBorder: OutlineInputBorder(

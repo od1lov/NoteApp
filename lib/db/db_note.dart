@@ -63,7 +63,7 @@ class DbHistory {
     await _box.put(history.id, history);
   }
 
-  Future<void> deleteNoteById(int id) async {
+  Future<void> deleteNoteById(String id) async {
     try {
       if (_box.containsKey(id)) {
         await _box.delete(id);
